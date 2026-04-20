@@ -9,10 +9,10 @@ class HomeView
         require_once 'app/template/footer.phtml';
     }
 
-    public function renderHeladeras($heladeras)
+    public function renderCatalogo($ropas)
     {
         require_once 'app/template/header.phtml';
-        require_once 'app/template/heladeras.phtml';
+        require_once 'app/template/ropa.phtml';
         require_once 'app/template/footer.phtml';
     }
 }

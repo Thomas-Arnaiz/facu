@@ -1,6 +1,6 @@
 <?php
 
-require_once 'app/controllers/alumnos.controller.php';
+require_once 'app/controllers/ropa.controller.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -9,7 +9,7 @@ if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
 
-$alumnosController = new AlumnosController();
+$ropaController = new RopaController();
 
 // Separar acción y parámetros
 $params = explode('/', $action);
@@ -18,9 +18,11 @@ $params = explode('/', $action);
 switch ($params[0]) {
 
     case 'home':
-        $alumnosController->home();
+        $ropaController->home();
         break;
-
+    case 'delete':
+        $ropaController->delete();
+        break;
     default:
         echo "404 Page Not Found";
         break;

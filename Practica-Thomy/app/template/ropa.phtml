@@ -1,0 +1,23 @@
+<section>
+    <?php
+    foreach ($ropas as $ropa) { ?>
+        <div class="ropa-item" id="<?= $ropa->ropa_id ?>">
+            <h2><?= $ropa->nombre ?></h2>
+            <p>Talle: <?= $ropa->talle_id ?></p>
+            <p>Precio: $<?= $ropa->precio ?></p>
+        </div>
+    <?php } ?>
+</section>
+<section>
+    <h1>Edicion</h1>
+    <h4>Eliminar</h4>
+
+    <form action="delete" method="POST">
+        <select name="select-ropa">
+            <?php foreach ($ropas as $ropa) { ?>
+                <option value="<?= $ropa->ropa_id ?>"><?= $ropa->nombre ?></option>
+            <?php } ?>
+        </select>
+        <button type="submit">Eliminar</button>
+    </form>
+</section>
