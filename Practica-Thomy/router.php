@@ -23,6 +23,19 @@ switch ($params[0]) {
     case 'delete':
         $ropaController->delete();
         break;
+    case 'add-ropa':
+        $ropaController->addRopa();
+        break;
+
+    case 'view-edit-ropa':
+        if ($params[1] === 'edit-ropa') {
+            $ropaController->editRopa();
+        } else {
+            $ropaController->viewEditRopa($params[1]);
+        }
+        break;
+
+
     default:
         echo "404 Page Not Found";
         break;

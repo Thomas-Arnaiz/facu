@@ -9,10 +9,24 @@ class HomeView
         require_once 'app/template/footer.phtml';
     }
 
-    public function renderCatalogo($ropas)
+    public function renderCatalogo($ropas, $talles)
     {
         require_once 'app/template/header.phtml';
         require_once 'app/template/ropa.phtml';
+        require_once 'app/template/footer.phtml';
+    }
+
+    public function showError($message)
+    {
+        require_once 'app/template/header.phtml';
+        echo "<div class='error'>$message</div>";
+        require_once 'app/template/footer.phtml';
+    }
+
+    public function renderEditRopa($ropa, $talles)
+    {
+        require_once 'app/template/header.phtml';
+        require_once 'app/template/edit-page.phtml';
         require_once 'app/template/footer.phtml';
     }
 }
